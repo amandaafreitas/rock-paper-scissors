@@ -17,9 +17,9 @@
         <h1>Pedra, papel ou tesoura </h1>
 
         <div class="placar">
-
-            <p>Computador:<span id="pontos-pc">0</span></p>
             <p> Jogador:<span id="pontos-jogador">0</span></p>
+            <p>Computador:<span id="pontos-pc">0</span></p>
+
 
         </div>
     </header>
@@ -29,17 +29,32 @@
             <p>Selecione uma imagem para fazer sua jogada </p>
         </div>
 
+
+        <div id="myModal" class="modal">
+
+            <div class="modal-conteudo">
+                <p>Jogo empatado! Faça outra jogada.</p>
+                <button id="btn">ok</button>
+            </div>
+
+        </div>
+
         <div class="imagens">
             <img src="img/paper.png" alt="paper gesture" id="paper">
             <img src="img/rock.png" alt="rock gesture" id="rock">
             <img src="img/scissors.png" alt="scissors gesture" id="scissors">
         </div>
+
+
         <div class="legendas">
             <p>Papel</p>
             <p>Pedra</p>
             <p>Tesoura</p>
         </div>
     </main>
+
+    <audio src="audio/lose.mp3" id="lose" autoplay></audio>
+    <audio src="audio/win.mp3" id="win" autoplay></audio>
 
 
     <script src="main.js"></script>

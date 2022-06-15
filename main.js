@@ -1,5 +1,3 @@
-//let jogada;
-
 const papel = document.querySelector("#paper");
 const pedra = document.querySelector("#rock");
 const tesoura = document.querySelector("#scissors");
@@ -10,18 +8,28 @@ tesoura.addEventListener("click", () => validaJogada("tesoura"));
 
 const ganhou = () => {
   let pontoJogador = document.querySelector("#pontos-jogador");
+  let musicaVitoria = document.getElementById("win");
+  musicaVitoria.play();
+
   pontoJogador.innerHTML = Number(pontoJogador.innerHTML) + 1;
 };
 
 const perdeu = () => {
   let pontoPc = document.querySelector("#pontos-pc");
+  let musicaDerrota = document.getElementById("lose");
+  musicaDerrota.play();
   pontoPc.innerHTML = Number(pontoPc.innerHTML) + 1;
 };
 
-function validaJogada(jogada) {
+function jogadaPC() {
   const adversario = ["pedra", "papel", "tesoura"];
   const aleatorio = Math.floor(Math.random() * adversario.length);
   let jogadaComputador = adversario[aleatorio];
+  return jogadaComputador;
+}
+
+function validaJogada(jogada) {
+  let jogadaComputador = jogadaPC();
 
   if (jogada === "pedra" && jogadaComputador === "tesoura") {
     ganhou();
